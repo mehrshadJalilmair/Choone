@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FoldingCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Choone.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ChooneTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ChooneUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VBPiledView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>44D04613A7591446E9F604C26C55657F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>75407680EBE75F3660597DD973F03BE2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9101D938E5C3032F3DD5E3814DEAADAF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A97E42A66F82938538D880355279F7D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9F4B998E13CF4C5A234634798C129C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

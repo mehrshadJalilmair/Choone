@@ -1,0 +1,850 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		210F43111D986C7A001BE3AB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F43101D986C7A001BE3AB /* UserController.swift */; };
+		210F43131D987EE8001BE3AB /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F43121D987EE8001BE3AB /* Recent.swift */; };
+		210F43151D987EFE001BE3AB /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F43141D987EFE001BE3AB /* Setting.swift */; };
+		2139CDCE1D99183B00EEBF4D /* RewardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139CDCD1D99183B00EEBF4D /* RewardCell.swift */; };
+		216274BE1D95DA9C00E284CE /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216274BD1D95DA9C00E284CE /* Rules.swift */; };
+		216274C11D95E0C000E284CE /* BizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216274C01D95E0C000E284CE /* BizCell.swift */; };
+		216274C31D95E11F00E284CE /* Biz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216274C21D95E11F00E284CE /* Biz.swift */; };
+		216274C71D95EA9300E284CE /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216274C61D95EA9300E284CE /* UIColor+Hex.swift */; };
+		219C33301D9556EB004A9432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C332F1D9556EB004A9432 /* AppDelegate.swift */; };
+		219C33321D9556EB004A9432 /* BizProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33311D9556EB004A9432 /* BizProfileController.swift */; };
+		219C33351D9556EB004A9432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219C33331D9556EB004A9432 /* Main.storyboard */; };
+		219C33381D9556EB004A9432 /* Choone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 219C33361D9556EB004A9432 /* Choone.xcdatamodeld */; };
+		219C333A1D9556EB004A9432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219C33391D9556EB004A9432 /* Assets.xcassets */; };
+		219C333D1D9556EB004A9432 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 219C333B1D9556EB004A9432 /* LaunchScreen.storyboard */; };
+		219C33481D9556EB004A9432 /* ChooneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33471D9556EB004A9432 /* ChooneTests.swift */; };
+		219C33531D9556EB004A9432 /* ChooneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33521D9556EB004A9432 /* ChooneUITests.swift */; };
+		219C33641D955865004A9432 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33621D955865004A9432 /* AvatarImageView.swift */; };
+		219C33651D955865004A9432 /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33631D955865004A9432 /* TWTButton.swift */; };
+		219C33691D95589F004A9432 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 219C33681D95589F004A9432 /* Reachability.m */; };
+		219C336C1D9558AB004A9432 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 219C336B1D9558AB004A9432 /* FXBlurView.m */; };
+		219C33721D955EEB004A9432 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33711D955EEB004A9432 /* HomeController.swift */; };
+		219C33741D956581004A9432 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33731D956581004A9432 /* SearchController.swift */; };
+		219C33761D95658E004A9432 /* CardsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C33751D95658E004A9432 /* CardsController.swift */; };
+		21C2F9F81D96DF2F0098D2BD /* StickyCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2F9F71D96DF2F0098D2BD /* StickyCollectionViewFlowLayout.swift */; };
+		21C2F9FA1D96DF660098D2BD /* CornerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2F9F91D96DF660098D2BD /* CornerCollectionViewCell.swift */; };
+		21C2F9FC1D9714220098D2BD /* WhatWhereController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2F9FB1D9714210098D2BD /* WhatWhereController.swift */; };
+		21D6C1FF1D9836B500C3BE0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D6C1FE1D9836B400C3BE0F /* ViewController.swift */; };
+		3F3BA8B28352C655F3D19E7C /* Pods_Choone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCAB27974A8B659ED3976AD /* Pods_Choone.framework */; };
+		797386596609EA528D0E105D /* Pods_ChooneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7A2B0EDCCB8CAC9C4CE0F0 /* Pods_ChooneTests.framework */; };
+		FD2839F85DB3AB07E57127E3 /* Pods_ChooneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F149B7872BEA49F30FC51B /* Pods_ChooneUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		219C33441D9556EB004A9432 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 219C33241D9556EA004A9432 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 219C332B1D9556EA004A9432;
+			remoteInfo = Choone;
+		};
+		219C334F1D9556EB004A9432 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 219C33241D9556EA004A9432 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 219C332B1D9556EA004A9432;
+			remoteInfo = Choone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09A4BD3769B90E418B5AE80A /* Pods-Choone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Choone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Choone/Pods-Choone.debug.xcconfig"; sourceTree = "<group>"; };
+		0BCAB27974A8B659ED3976AD /* Pods_Choone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Choone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		162D3391C2B694377D9693CC /* Pods-ChooneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChooneTests/Pods-ChooneTests.release.xcconfig"; sourceTree = "<group>"; };
+		210F43101D986C7A001BE3AB /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		210F43121D987EE8001BE3AB /* Recent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		210F43141D987EFE001BE3AB /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		2139CDCD1D99183B00EEBF4D /* RewardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCell.swift; sourceTree = "<group>"; };
+		216274BD1D95DA9C00E284CE /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		216274C01D95E0C000E284CE /* BizCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BizCell.swift; sourceTree = "<group>"; };
+		216274C21D95E11F00E284CE /* Biz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Biz.swift; sourceTree = "<group>"; };
+		216274C61D95EA9300E284CE /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "../UIColor+Hex.swift"; sourceTree = "<group>"; };
+		219C332C1D9556EA004A9432 /* Choone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Choone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		219C332F1D9556EB004A9432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		219C33311D9556EB004A9432 /* BizProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizProfileController.swift; sourceTree = "<group>"; };
+		219C33341D9556EB004A9432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		219C33371D9556EB004A9432 /* Choone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Choone.xcdatamodel; sourceTree = "<group>"; };
+		219C33391D9556EB004A9432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		219C333C1D9556EB004A9432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		219C333E1D9556EB004A9432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		219C33431D9556EB004A9432 /* ChooneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChooneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		219C33471D9556EB004A9432 /* ChooneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooneTests.swift; sourceTree = "<group>"; };
+		219C33491D9556EB004A9432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		219C334E1D9556EB004A9432 /* ChooneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChooneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		219C33521D9556EB004A9432 /* ChooneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooneUITests.swift; sourceTree = "<group>"; };
+		219C33541D9556EB004A9432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		219C33621D955865004A9432 /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		219C33631D955865004A9432 /* TWTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTButton.swift; sourceTree = "<group>"; };
+		219C33661D95589F004A9432 /* Choone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Choone-Bridging-Header.h"; sourceTree = "<group>"; };
+		219C33671D95589F004A9432 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		219C33681D95589F004A9432 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		219C336A1D9558AB004A9432 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		219C336B1D9558AB004A9432 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		219C33711D955EEB004A9432 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		219C33731D956581004A9432 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		219C33751D95658E004A9432 /* CardsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsController.swift; sourceTree = "<group>"; };
+		21C2F9F71D96DF2F0098D2BD /* StickyCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		21C2F9F91D96DF660098D2BD /* CornerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerCollectionViewCell.swift; sourceTree = "<group>"; };
+		21C2F9FB1D9714210098D2BD /* WhatWhereController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatWhereController.swift; sourceTree = "<group>"; };
+		21D6C1FE1D9836B400C3BE0F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FDDA160072D18118392088C /* Pods-ChooneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChooneTests/Pods-ChooneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F6C6DC97ABF48ECA47096C4 /* Pods-ChooneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooneUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChooneUITests/Pods-ChooneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E7A2B0EDCCB8CAC9C4CE0F0 /* Pods_ChooneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChooneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A390487D738E248621B01DF5 /* Pods-ChooneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChooneUITests/Pods-ChooneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9F149B7872BEA49F30FC51B /* Pods_ChooneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChooneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7B20E2E875101F58B8C5107 /* Pods-Choone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Choone.release.xcconfig"; path = "Pods/Target Support Files/Pods-Choone/Pods-Choone.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		219C33291D9556EA004A9432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F3BA8B28352C655F3D19E7C /* Pods_Choone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		219C33401D9556EB004A9432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				797386596609EA528D0E105D /* Pods_ChooneTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		219C334B1D9556EB004A9432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD2839F85DB3AB07E57127E3 /* Pods_ChooneUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		071CE45585D2969F1D25F1D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09A4BD3769B90E418B5AE80A /* Pods-Choone.debug.xcconfig */,
+				E7B20E2E875101F58B8C5107 /* Pods-Choone.release.xcconfig */,
+				3FDDA160072D18118392088C /* Pods-ChooneTests.debug.xcconfig */,
+				162D3391C2B694377D9693CC /* Pods-ChooneTests.release.xcconfig */,
+				4F6C6DC97ABF48ECA47096C4 /* Pods-ChooneUITests.debug.xcconfig */,
+				A390487D738E248621B01DF5 /* Pods-ChooneUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		210F430F1D986C5C001BE3AB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				210F43101D986C7A001BE3AB /* UserController.swift */,
+				210F43121D987EE8001BE3AB /* Recent.swift */,
+				210F43141D987EFE001BE3AB /* Setting.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		219C33231D9556EA004A9432 = {
+			isa = PBXGroup;
+			children = (
+				219C332E1D9556EB004A9432 /* Choone */,
+				219C33461D9556EB004A9432 /* ChooneTests */,
+				219C33511D9556EB004A9432 /* ChooneUITests */,
+				219C332D1D9556EA004A9432 /* Products */,
+				071CE45585D2969F1D25F1D2 /* Pods */,
+				FD3AD5E511F0DF35C8DAB5D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		219C332D1D9556EA004A9432 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				219C332C1D9556EA004A9432 /* Choone.app */,
+				219C33431D9556EB004A9432 /* ChooneTests.xctest */,
+				219C334E1D9556EB004A9432 /* ChooneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		219C332E1D9556EB004A9432 /* Choone */ = {
+			isa = PBXGroup;
+			children = (
+				210F430F1D986C5C001BE3AB /* User */,
+				219C33701D955EB4004A9432 /* My Cards */,
+				219C336F1D955EA6004A9432 /* Search */,
+				219C336E1D955DF3004A9432 /* Home */,
+				219C336D1D955926004A9432 /* Biz */,
+				219C33611D955853004A9432 /* Imported Files */,
+				219C33601D95571A004A9432 /* Supporting Files */,
+			);
+			path = Choone;
+			sourceTree = "<group>";
+		};
+		219C33461D9556EB004A9432 /* ChooneTests */ = {
+			isa = PBXGroup;
+			children = (
+				219C33471D9556EB004A9432 /* ChooneTests.swift */,
+				219C33491D9556EB004A9432 /* Info.plist */,
+			);
+			path = ChooneTests;
+			sourceTree = "<group>";
+		};
+		219C33511D9556EB004A9432 /* ChooneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				219C33521D9556EB004A9432 /* ChooneUITests.swift */,
+				219C33541D9556EB004A9432 /* Info.plist */,
+			);
+			path = ChooneUITests;
+			sourceTree = "<group>";
+		};
+		219C33601D95571A004A9432 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				219C332F1D9556EB004A9432 /* AppDelegate.swift */,
+				219C33331D9556EB004A9432 /* Main.storyboard */,
+				219C33391D9556EB004A9432 /* Assets.xcassets */,
+				219C333B1D9556EB004A9432 /* LaunchScreen.storyboard */,
+				219C333E1D9556EB004A9432 /* Info.plist */,
+				219C33361D9556EB004A9432 /* Choone.xcdatamodeld */,
+				219C33661D95589F004A9432 /* Choone-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		219C33611D955853004A9432 /* Imported Files */ = {
+			isa = PBXGroup;
+			children = (
+				21C2F9F71D96DF2F0098D2BD /* StickyCollectionViewFlowLayout.swift */,
+				216274C61D95EA9300E284CE /* UIColor+Hex.swift */,
+				219C336A1D9558AB004A9432 /* FXBlurView.h */,
+				219C336B1D9558AB004A9432 /* FXBlurView.m */,
+				219C33621D955865004A9432 /* AvatarImageView.swift */,
+				219C33631D955865004A9432 /* TWTButton.swift */,
+				219C33671D95589F004A9432 /* Reachability.h */,
+				219C33681D95589F004A9432 /* Reachability.m */,
+			);
+			name = "Imported Files";
+			sourceTree = "<group>";
+		};
+		219C336D1D955926004A9432 /* Biz */ = {
+			isa = PBXGroup;
+			children = (
+				216274C01D95E0C000E284CE /* BizCell.swift */,
+				216274C21D95E11F00E284CE /* Biz.swift */,
+				216274BD1D95DA9C00E284CE /* Rules.swift */,
+				219C33311D9556EB004A9432 /* BizProfileController.swift */,
+				21D6C1FE1D9836B400C3BE0F /* ViewController.swift */,
+				2139CDCD1D99183B00EEBF4D /* RewardCell.swift */,
+			);
+			name = Biz;
+			sourceTree = "<group>";
+		};
+		219C336E1D955DF3004A9432 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				219C33711D955EEB004A9432 /* HomeController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		219C336F1D955EA6004A9432 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				219C33731D956581004A9432 /* SearchController.swift */,
+				21C2F9FB1D9714210098D2BD /* WhatWhereController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		219C33701D955EB4004A9432 /* My Cards */ = {
+			isa = PBXGroup;
+			children = (
+				219C33751D95658E004A9432 /* CardsController.swift */,
+				21C2F9F91D96DF660098D2BD /* CornerCollectionViewCell.swift */,
+			);
+			name = "My Cards";
+			sourceTree = "<group>";
+		};
+		FD3AD5E511F0DF35C8DAB5D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BCAB27974A8B659ED3976AD /* Pods_Choone.framework */,
+				9E7A2B0EDCCB8CAC9C4CE0F0 /* Pods_ChooneTests.framework */,
+				B9F149B7872BEA49F30FC51B /* Pods_ChooneUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		219C332B1D9556EA004A9432 /* Choone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 219C33571D9556EB004A9432 /* Build configuration list for PBXNativeTarget "Choone" */;
+			buildPhases = (
+				A94F0642623C69A369DB68BB /* [CP] Check Pods Manifest.lock */,
+				219C33281D9556EA004A9432 /* Sources */,
+				219C33291D9556EA004A9432 /* Frameworks */,
+				219C332A1D9556EA004A9432 /* Resources */,
+				004B921EEF5149A58BDCC40A /* [CP] Embed Pods Frameworks */,
+				16E21CA0C2C15F3C92740184 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Choone;
+			productName = Choone;
+			productReference = 219C332C1D9556EA004A9432 /* Choone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		219C33421D9556EB004A9432 /* ChooneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 219C335A1D9556EB004A9432 /* Build configuration list for PBXNativeTarget "ChooneTests" */;
+			buildPhases = (
+				4F1A2CBBF41E130D540308A6 /* [CP] Check Pods Manifest.lock */,
+				219C333F1D9556EB004A9432 /* Sources */,
+				219C33401D9556EB004A9432 /* Frameworks */,
+				219C33411D9556EB004A9432 /* Resources */,
+				3B729AF72C7FB66AAFF04F32 /* [CP] Embed Pods Frameworks */,
+				DAD00922399AE8FBA6238120 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				219C33451D9556EB004A9432 /* PBXTargetDependency */,
+			);
+			name = ChooneTests;
+			productName = ChooneTests;
+			productReference = 219C33431D9556EB004A9432 /* ChooneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		219C334D1D9556EB004A9432 /* ChooneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 219C335D1D9556EB004A9432 /* Build configuration list for PBXNativeTarget "ChooneUITests" */;
+			buildPhases = (
+				FBDD7134D73D5A16457BF04E /* [CP] Check Pods Manifest.lock */,
+				219C334A1D9556EB004A9432 /* Sources */,
+				219C334B1D9556EB004A9432 /* Frameworks */,
+				219C334C1D9556EB004A9432 /* Resources */,
+				BA326EF72E095D0C9978FE8C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				219C33501D9556EB004A9432 /* PBXTargetDependency */,
+			);
+			name = ChooneUITests;
+			productName = ChooneUITests;
+			productReference = 219C334E1D9556EB004A9432 /* ChooneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		219C33241D9556EA004A9432 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Mehrshad Jalilmasir";
+				TargetAttributes = {
+					219C332B1D9556EA004A9432 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3T359VN99R;
+					};
+					219C33421D9556EB004A9432 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 219C332B1D9556EA004A9432;
+					};
+					219C334D1D9556EB004A9432 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 219C332B1D9556EA004A9432;
+					};
+				};
+			};
+			buildConfigurationList = 219C33271D9556EA004A9432 /* Build configuration list for PBXProject "Choone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 219C33231D9556EA004A9432;
+			productRefGroup = 219C332D1D9556EA004A9432 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				219C332B1D9556EA004A9432 /* Choone */,
+				219C33421D9556EB004A9432 /* ChooneTests */,
+				219C334D1D9556EB004A9432 /* ChooneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		219C332A1D9556EA004A9432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219C333D1D9556EB004A9432 /* LaunchScreen.storyboard in Resources */,
+				219C333A1D9556EB004A9432 /* Assets.xcassets in Resources */,
+				219C33351D9556EB004A9432 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		219C33411D9556EB004A9432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		219C334C1D9556EB004A9432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		004B921EEF5149A58BDCC40A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Choone/Pods-Choone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16E21CA0C2C15F3C92740184 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Choone/Pods-Choone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B729AF72C7FB66AAFF04F32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChooneTests/Pods-ChooneTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F1A2CBBF41E130D540308A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A94F0642623C69A369DB68BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA326EF72E095D0C9978FE8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChooneUITests/Pods-ChooneUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAD00922399AE8FBA6238120 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChooneTests/Pods-ChooneTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBDD7134D73D5A16457BF04E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		219C33281D9556EA004A9432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				210F43111D986C7A001BE3AB /* UserController.swift in Sources */,
+				219C33321D9556EB004A9432 /* BizProfileController.swift in Sources */,
+				219C33641D955865004A9432 /* AvatarImageView.swift in Sources */,
+				219C336C1D9558AB004A9432 /* FXBlurView.m in Sources */,
+				216274C31D95E11F00E284CE /* Biz.swift in Sources */,
+				219C33651D955865004A9432 /* TWTButton.swift in Sources */,
+				219C33721D955EEB004A9432 /* HomeController.swift in Sources */,
+				216274C11D95E0C000E284CE /* BizCell.swift in Sources */,
+				210F43131D987EE8001BE3AB /* Recent.swift in Sources */,
+				219C33381D9556EB004A9432 /* Choone.xcdatamodeld in Sources */,
+				21C2F9FC1D9714220098D2BD /* WhatWhereController.swift in Sources */,
+				210F43151D987EFE001BE3AB /* Setting.swift in Sources */,
+				216274C71D95EA9300E284CE /* UIColor+Hex.swift in Sources */,
+				21C2F9FA1D96DF660098D2BD /* CornerCollectionViewCell.swift in Sources */,
+				219C33691D95589F004A9432 /* Reachability.m in Sources */,
+				21D6C1FF1D9836B500C3BE0F /* ViewController.swift in Sources */,
+				219C33741D956581004A9432 /* SearchController.swift in Sources */,
+				21C2F9F81D96DF2F0098D2BD /* StickyCollectionViewFlowLayout.swift in Sources */,
+				2139CDCE1D99183B00EEBF4D /* RewardCell.swift in Sources */,
+				216274BE1D95DA9C00E284CE /* Rules.swift in Sources */,
+				219C33301D9556EB004A9432 /* AppDelegate.swift in Sources */,
+				219C33761D95658E004A9432 /* CardsController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		219C333F1D9556EB004A9432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219C33481D9556EB004A9432 /* ChooneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		219C334A1D9556EB004A9432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219C33531D9556EB004A9432 /* ChooneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		219C33451D9556EB004A9432 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 219C332B1D9556EA004A9432 /* Choone */;
+			targetProxy = 219C33441D9556EB004A9432 /* PBXContainerItemProxy */;
+		};
+		219C33501D9556EB004A9432 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 219C332B1D9556EA004A9432 /* Choone */;
+			targetProxy = 219C334F1D9556EB004A9432 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		219C33331D9556EB004A9432 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				219C33341D9556EB004A9432 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		219C333B1D9556EB004A9432 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				219C333C1D9556EB004A9432 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		219C33551D9556EB004A9432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		219C33561D9556EB004A9432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		219C33581D9556EB004A9432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A4BD3769B90E418B5AE80A /* Pods-Choone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Choone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.Choone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Choone/Choone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		219C33591D9556EB004A9432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7B20E2E875101F58B8C5107 /* Pods-Choone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Choone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.Choone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Choone/Choone-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		219C335B1D9556EB004A9432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FDDA160072D18118392088C /* Pods-ChooneTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChooneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Choone.app/Choone";
+			};
+			name = Debug;
+		};
+		219C335C1D9556EB004A9432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 162D3391C2B694377D9693CC /* Pods-ChooneTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ChooneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Choone.app/Choone";
+			};
+			name = Release;
+		};
+		219C335E1D9556EB004A9432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F6C6DC97ABF48ECA47096C4 /* Pods-ChooneUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ChooneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Choone;
+			};
+			name = Debug;
+		};
+		219C335F1D9556EB004A9432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A390487D738E248621B01DF5 /* Pods-ChooneUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ChooneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Choone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		219C33271D9556EA004A9432 /* Build configuration list for PBXProject "Choone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				219C33551D9556EB004A9432 /* Debug */,
+				219C33561D9556EB004A9432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		219C33571D9556EB004A9432 /* Build configuration list for PBXNativeTarget "Choone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				219C33581D9556EB004A9432 /* Debug */,
+				219C33591D9556EB004A9432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		219C335A1D9556EB004A9432 /* Build configuration list for PBXNativeTarget "ChooneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				219C335B1D9556EB004A9432 /* Debug */,
+				219C335C1D9556EB004A9432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		219C335D1D9556EB004A9432 /* Build configuration list for PBXNativeTarget "ChooneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				219C335E1D9556EB004A9432 /* Debug */,
+				219C335F1D9556EB004A9432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		219C33361D9556EB004A9432 /* Choone.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				219C33371D9556EB004A9432 /* Choone.xcdatamodel */,
+			);
+			currentVersion = 219C33371D9556EB004A9432 /* Choone.xcdatamodel */;
+			path = Choone.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 219C33241D9556EA004A9432 /* Project object */;
+}

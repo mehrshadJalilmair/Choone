@@ -1,0 +1,15 @@
+PODS:
+  - FoldingCell (1.0.0)
+  - VBPiledView (1.0)
+
+DEPENDENCIES:
+  - FoldingCell
+  - VBPiledView (~> 1.0)
+
+SPEC CHECKSUMS:
+  FoldingCell: ca0b0f73a853143bf7d968c04a6604d25fbf1af7
+  VBPiledView: 236fcb1a30fbd10f762d053d91849a23a9d30471
+
+PODFILE CHECKSUM: 65c77a3b9185a06c5fe77397e9642a6f5e981c4e
+
+COCOAPODS: 1.0.1
