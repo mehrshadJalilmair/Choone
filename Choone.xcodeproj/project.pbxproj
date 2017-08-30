@@ -34,6 +34,7 @@
 		21C2F9FA1D96DF660098D2BD /* CornerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2F9F91D96DF660098D2BD /* CornerCollectionViewCell.swift */; };
 		21C2F9FC1D9714220098D2BD /* WhatWhereController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2F9FB1D9714210098D2BD /* WhatWhereController.swift */; };
 		21D6C1FF1D9836B500C3BE0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D6C1FE1D9836B400C3BE0F /* ViewController.swift */; };
+		2F88DA3E1E8DB27100A8DF79 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F88DA3D1E8DB27100A8DF79 /* icon.png */; };
 		3F3BA8B28352C655F3D19E7C /* Pods_Choone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCAB27974A8B659ED3976AD /* Pods_Choone.framework */; };
 		797386596609EA528D0E105D /* Pods_ChooneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7A2B0EDCCB8CAC9C4CE0F0 /* Pods_ChooneTests.framework */; };
 		FD2839F85DB3AB07E57127E3 /* Pods_ChooneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F149B7872BEA49F30FC51B /* Pods_ChooneUITests.framework */; };
@@ -96,6 +97,7 @@
 		21C2F9F91D96DF660098D2BD /* CornerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerCollectionViewCell.swift; sourceTree = "<group>"; };
 		21C2F9FB1D9714210098D2BD /* WhatWhereController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatWhereController.swift; sourceTree = "<group>"; };
 		21D6C1FE1D9836B400C3BE0F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F88DA3D1E8DB27100A8DF79 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		3FDDA160072D18118392088C /* Pods-ChooneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChooneTests/Pods-ChooneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F6C6DC97ABF48ECA47096C4 /* Pods-ChooneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChooneUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChooneUITests/Pods-ChooneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E7A2B0EDCCB8CAC9C4CE0F0 /* Pods_ChooneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChooneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 		219C33231D9556EA004A9432 = {
 			isa = PBXGroup;
 			children = (
+				2F88DA3D1E8DB27100A8DF79 /* icon.png */,
 				219C332E1D9556EB004A9432 /* Choone */,
 				219C33461D9556EB004A9432 /* ChooneTests */,
 				219C33511D9556EB004A9432 /* ChooneUITests */,
@@ -255,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				219C33711D955EEB004A9432 /* HomeController.swift */,
+				21C2F9FB1D9714210098D2BD /* WhatWhereController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -263,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				219C33731D956581004A9432 /* SearchController.swift */,
-				21C2F9FB1D9714210098D2BD /* WhatWhereController.swift */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				219C334B1D9556EB004A9432 /* Frameworks */,
 				219C334C1D9556EB004A9432 /* Resources */,
 				BA326EF72E095D0C9978FE8C /* [CP] Copy Pods Resources */,
+				F7F4675BA1C5AC9DBB6E9710 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,19 +362,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mehrshad Jalilmasir";
 				TargetAttributes = {
 					219C332B1D9556EA004A9432 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 3T359VN99R;
+						DevelopmentTeam = BJ9VCS422A;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 					219C33421D9556EB004A9432 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 219C332B1D9556EA004A9432;
 					};
 					219C334D1D9556EB004A9432 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 219C332B1D9556EA004A9432;
 					};
 				};
@@ -400,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F88DA3E1E8DB27100A8DF79 /* icon.png in Resources */,
 				219C333D1D9556EB004A9432 /* LaunchScreen.storyboard in Resources */,
 				219C333A1D9556EB004A9432 /* Assets.xcassets in Resources */,
 				219C33351D9556EB004A9432 /* Main.storyboard in Resources */,
@@ -480,7 +489,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A94F0642623C69A369DB68BB /* [CP] Check Pods Manifest.lock */ = {
@@ -495,7 +504,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BA326EF72E095D0C9978FE8C /* [CP] Copy Pods Resources */ = {
@@ -528,6 +537,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChooneTests/Pods-ChooneTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F7F4675BA1C5AC9DBB6E9710 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChooneUITests/Pods-ChooneUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FBDD7134D73D5A16457BF04E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,7 +564,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -640,8 +664,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -686,8 +712,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -706,6 +734,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -715,15 +744,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 09A4BD3769B90E418B5AE80A /* Pods-Choone.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = BJ9VCS422A;
 				INFOPLIST_FILE = Choone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.Choone;
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.USC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Choone/Choone-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -731,14 +764,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7B20E2E875101F58B8C5107 /* Pods-Choone.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = BJ9VCS422A;
 				INFOPLIST_FILE = Choone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.Choone;
+				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.USC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Choone/Choone-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -751,6 +788,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Choone.app/Choone";
 			};
 			name = Debug;
@@ -764,6 +802,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Choone.app/Choone";
 			};
 			name = Release;
@@ -776,6 +815,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Choone;
 			};
 			name = Debug;
@@ -788,6 +828,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = startup.mvf.ChooneUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Choone;
 			};
 			name = Release;

@@ -29,19 +29,19 @@ class BizCell: UITableViewCell {
         _image.layer.cornerRadius = 10
         _image.clipsToBounds = true
         _image.layer.borderWidth = 0.5
-        _image.layer.borderColor = UIColor.clearColor().CGColor
+        _image.layer.borderColor = UIColor.clear.cgColor
         
         background.layer.cornerRadius = 3.0
         background.layer.masksToBounds = false
-        background.layer.shadowColor = UIColor.blackColor().colorWithAlphaComponent(0.5).CGColor
+        background.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         background.layer.shadowOffset = CGSize(width: 0, height: 0)
         background.layer.shadowOpacity = 0.5
         
-        _image.image = UIImage(named: "2")
+        _image.image = UIImage(named: biz.imageAddress)
         
         name.text = biz.Name
         
-        distance.text = "فاصله کیلومتر"
+        distance.text = biz.Address
         
         rule.text = biz.p_rules[0].name + ": " + biz.p_rules[0].explain//case and complete
     }

@@ -16,27 +16,23 @@ class CardsController: UIViewController {
     
     override func viewDidLoad() {
         
-        configureNavigationBar()
-        configureStatusBar()
+        //configureNavigationBar()
+        //configureStatusBar()
         
-        let rule:PublicRule = PublicRule(id: "1",name: "bia", explain: "khoobe", howMuch: "50", from: "100", type: "0")
-        cards.append(Biz(id: "1", name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        cards.append(Biz(id: "2",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        cards.append(Biz(id: "3",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        cards.append(Biz(id: "4",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        cards.append(Biz(id: "5",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        cards.append(Biz(id: "6",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
+        let rule1:PublicRule = PublicRule(id: "1",name: "65 min,223 Calories", explain: "2/2/2017", howMuch: "50", from: "100", type: "0")
+        
+        cards.append(Biz(id: "1", name: "lyon recreation center" , address: "25 pts" , p_rules: [rule1] , lat: 0.0 , long: 0.0 , imageURL: "1w"))
     }
 }
 
 extension CardsController: UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kDemoCell, forIndexPath: indexPath) as! CornerCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kDemoCell, for: indexPath) as! CornerCollectionViewCell
         
         let hexString = colorsArray[indexPath.row]
         let color = UIColor.colorFromHexString(hexString)
@@ -48,53 +44,53 @@ extension CardsController: UICollectionViewDataSource {
         
         return cell
     }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         selectedBizIndex = indexPath.row
         from = 2
-        performSegueWithIdentifier("show biz", sender: indexPath.row)
+        performSegue(withIdentifier: "show biz", sender: indexPath.row)
     }
 }
 
 extension CardsController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(CGRectGetWidth(view.bounds), kCellHeight)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.bounds.width, height: kCellHeight)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: NSInteger) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: NSInteger) -> CGFloat {
         return kItemSpace
     }
 }
 
 extension CardsController {
     
-    private func configureNavigationBar() {
+    fileprivate func configureNavigationBar() {
         
         //transparent background
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = false
-        self.navigationController?.navigationBar.tintColor = .whiteColor()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = .white
         
         if let font = UIFont(name: "Avenir-medium" , size: 18) {
             self.navigationController?.navigationBar.titleTextAttributes = [
-                NSForegroundColorAttributeName : UIColor.whiteColor(),
+                NSForegroundColorAttributeName : UIColor.white,
                 NSFontAttributeName : font
             ]
         }
         
         self.navigationController?.navigationBar.backItem?.title = ""
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
-    private func configureStatusBar() {
-        guard  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
+    fileprivate func configureStatusBar() {
+        guard  let statusBar = (UIApplication.shared.value(forKey: "statusBarWindow") as AnyObject).value(forKey: "statusBar") as? UIView else {
             return
         }
         
-        statusBar.backgroundColor = .clearColor()
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        statusBar.backgroundColor = .clear
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 }
 

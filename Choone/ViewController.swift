@@ -10,7 +10,7 @@ import UIKit
 import FoldingCell
 
 enum Paging {
-    case Home, Cards, Search
+    case home, cards, search
 }
 var selectedBizIndex:Int!
 var from:Int!
@@ -19,7 +19,7 @@ let offset_HeaderStop:CGFloat = 40.0 // At this offset the Header stops its tran
 let distance_W_LabelHeader:CGFloat = 30.0 // The distance between the top of the screen and the top of the White Label
 
 enum contentTypes {
-    case Rewards, Activity, Details
+    case rewards, activity, details
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate , rewarding {
@@ -41,14 +41,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: class properties
     var headerBlurImageView:UIImageView!
     var headerImageView:UIImageView!
-    var contentToDisplay : contentTypes = .Rewards
+    var contentToDisplay : contentTypes = .rewards
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         createCellHeightsArray()
         tableView.contentInset = UIEdgeInsetsMake(headerView.frame.height, 0, 0, 0)
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
     }
     
     // MARK: configure
@@ -70,19 +70,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cellHeights.append(kCloseCellHeight)
             }
         }
+        else if from == 3 {
+            
+            for _ in 0...ChangedSearchResults[selectedBizIndex].p_rules.count {
+                cellHeights.append(kCloseCellHeight)
+            }
+        }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        
+        var url = ""
+        
+        if from == 0 {
+            
+            url = searchResults[selectedBizIndex].imageAddress
+        }else if from == 1 {
+            
+            url = nearbyBizes[selectedBizIndex].imageAddress
+        }else if from == 2 {
+            
+            url = cards[selectedBizIndex].imageAddress
+        }
+        else if from == 3
+        {
+            url = ChangedSearchResults[selectedBizIndex].imageAddress
+        }
+
         
         headerImageView = UIImageView(frame: headerView.bounds)
-        headerImageView?.image = UIImage(named: "2")
-        headerImageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        headerImageView?.image = UIImage(named: url)
+        headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerView.insertSubview(headerImageView, belowSubview: headerLabel)
         
         // Header - Blurred Image
         headerBlurImageView = UIImageView(frame: headerView.bounds)
-        headerBlurImageView?.image = UIImage(named: "2")?.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor.clearColor())
-        headerBlurImageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        headerBlurImageView?.image = UIImage(named: url)?.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
+        headerBlurImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerBlurImageView?.alpha = 0.0
         headerView.insertSubview(headerBlurImageView, belowSubview: headerLabel)
         
@@ -92,23 +116,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         headerView.clipsToBounds = true
         
-        avatarImage.image = UIImage(named: "2")
+        avatarImage.image = UIImage(named: url)
     }
 
 
     // MARK: Table view processing
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return cellHeights[indexPath.row]
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch contentToDisplay {
-        case .Rewards:
+        case .rewards:
 
             if from == 0 {
                 
@@ -120,19 +144,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 return cards[selectedBizIndex].p_rules.count
             }
+            else if from == 3
+            {
+                return ChangedSearchResults[selectedBizIndex].p_rules.count
+            }
             
-        case .Activity:
+        case .activity:
             return 0
             
-        case .Details:
+        case .details:
             return 0
             
         }
         return 0
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("RewardCell" , forIndexPath: indexPath) as! RewardCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RewardCell" , for: indexPath) as! RewardCell
         if from == 0 {
             
             cell.rule = searchResults[selectedBizIndex].p_rules[indexPath.row]
@@ -142,11 +170,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }else if from == 2 {
             
             cell.rule = cards[selectedBizIndex].p_rules[indexPath.row]
+        }else if from == 3 {
+            
+            cell.rule = ChangedSearchResults[selectedBizIndex].p_rules[indexPath.row]
         }
         cell.delegate = self
         return cell
     }
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if cell is FoldingCell {
             let foldingCell = cell as! FoldingCell
@@ -158,9 +189,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FoldingCell
+        let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
         
         var duration = 0.0
         if cellHeights[indexPath.row] == kCloseCellHeight { // open cell
@@ -173,7 +204,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             duration = 1.1
         }
         
-        UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseOut, animations: { () -> Void in
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
             tableView.beginUpdates()
             tableView.endUpdates()
             }, completion: nil)
@@ -181,7 +212,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     // MARK: Scroll view delegate
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y + headerView.bounds.height
         
@@ -200,7 +231,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             // Hide views if scrolled super fast
             headerView.layer.zPosition = 0
-            headerLabel.hidden = true
+            headerLabel.isHidden = true
             
         }
             
@@ -214,10 +245,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             //  ------------ Label
             
-            headerLabel.hidden = false
+            headerLabel.isHidden = false
             let alignToNameLabel = -offset + handleLabel.frame.origin.y + headerView.frame.height + offset_HeaderStop
             
-            headerLabel.frame.origin = CGPointMake(headerLabel.frame.origin.x, max(alignToNameLabel, distance_W_LabelHeader + offset_HeaderStop))
+            headerLabel.frame.origin = CGPoint(x: headerLabel.frame.origin.x, y: max(alignToNameLabel, distance_W_LabelHeader + offset_HeaderStop))
             
             
             //  ------------ Blur
@@ -268,17 +299,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // MARK: Interface buttons
-    @IBAction func selectContentType(sender: UISegmentedControl) {
+    @IBAction func selectContentType(_ sender: UISegmentedControl) {
         
         // crap code I know
         if sender.selectedSegmentIndex == 0 {
-            contentToDisplay = .Rewards
+            contentToDisplay = .rewards
         }
         else if sender.selectedSegmentIndex == 1{
-            contentToDisplay = .Activity
+            contentToDisplay = .activity
         }
         else{
-            contentToDisplay = .Details
+            contentToDisplay = .details
         }
         
         tableView.reloadData()
@@ -288,18 +319,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    @IBAction func back(sender: AnyObject) {
+    @IBAction func back(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true) { 
+        self.dismiss(animated: true) { 
             
         }
     }
     
-    func getReward(cell: RewardCell) {
+    func getReward(_ cell: RewardCell) {
         
         print("get points")
     }
-    func useReward(cell: RewardCell) {
+    func useReward(_ cell: RewardCell) {
         
         print("use points")
     }

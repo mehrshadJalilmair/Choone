@@ -24,7 +24,7 @@ class WhatWhereController: UIViewController , UISearchBarDelegate , UITextFieldD
     override func viewWillLayoutSubviews() {
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(WhatWhereController.handleSwipes(_:)))
-        leftSwipe.direction = .Right
+        leftSwipe.direction = .right
         view.addGestureRecognizer(leftSwipe)
     }
     
@@ -33,44 +33,44 @@ class WhatWhereController: UIViewController , UISearchBarDelegate , UITextFieldD
 
         waiting.hidesWhenStopped = true
         
-        tableView.keyboardDismissMode = .OnDrag
+        tableView.keyboardDismissMode = .onDrag
         
         searcbBar1.backgroundImage = UIImage()
         searchBar2.backgroundImage = UIImage()
         
-        let searchTextField1: UITextField? = searcbBar1.valueForKey("searchField") as? UITextField
-        if searchTextField1!.respondsToSelector(Selector("attributedPlaceholder")) {
+        let searchTextField1: UITextField? = searcbBar1.value(forKey: "searchField") as? UITextField
+        if searchTextField1!.responds(to: #selector(getter: UITextField.attributedPlaceholder)) {
             //var color = UIColor.purpleColor()
-            let attributeDict = [NSForegroundColorAttributeName: UIColor.lightGrayColor().colorWithAlphaComponent(0.5)]
+            let attributeDict = [NSForegroundColorAttributeName: UIColor.lightGray.withAlphaComponent(0.5)]
             searchTextField1!.attributedPlaceholder = NSAttributedString(string: "فروشگاه اینترنتی،رستوران،پوشاک...", attributes: attributeDict)
         }
-        searchTextField1?.textAlignment = .Right
+        searchTextField1?.textAlignment = .right
         
-        let searchTextField2: UITextField? = searchBar2.valueForKey("searchField") as? UITextField
-        if searchTextField2!.respondsToSelector(Selector("attributedPlaceholder")) {
+        let searchTextField2: UITextField? = searchBar2.value(forKey: "searchField") as? UITextField
+        if searchTextField2!.responds(to: #selector(getter: UITextField.attributedPlaceholder)) {
             //var color = UIColor.purpleColor()
-            let attributeDict = [NSForegroundColorAttributeName: UIColor.lightGrayColor().colorWithAlphaComponent(0.5)]
+            let attributeDict = [NSForegroundColorAttributeName: UIColor.lightGray.withAlphaComponent(0.5)]
             searchTextField2!.attributedPlaceholder = NSAttributedString(string: "خیابان آزادی،تهران،اصفهان...", attributes: attributeDict)
         }
-        searchTextField2?.textAlignment = .Right
+        searchTextField2?.textAlignment = .right
         
         //self.navigationController?.navigationBarHidden = true
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         
         if let font = UIFont(name: "B Yekan", size: 15) {
             
-            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName :font , NSForegroundColorAttributeName: UIColor.whiteColor()]
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName :font , NSForegroundColorAttributeName: UIColor.white]
         }
     }
     
-    func handleSwipes(sender:UISwipeGestureRecognizer) {
+    func handleSwipes(_ sender:UISwipeGestureRecognizer) {
         
-        if (sender.direction == .Right) {
+        if (sender.direction == .right) {
             
-            self.navigationController?.popToRootViewControllerAnimated(true)//back to previous
+            //self.navigationController?.popToRootViewController(animated: true)//back to previous
         }
     }
-    func searchBarSearchButtonClicked(searchBar: UISearchBar)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
     {
         self.view.endEditing(true)
     }
@@ -95,7 +95,7 @@ class WhatWhereController: UIViewController , UISearchBarDelegate , UITextFieldD
         print("\(reachabilityStatus)")
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchBar == searcbBar1 {
             
@@ -128,22 +128,22 @@ class WhatWhereController: UIViewController , UISearchBarDelegate , UITextFieldD
     }
     
     //MARK : Table View Impls
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSectionsInTableView(_ tableView: UITableView) -> Int
     {
         return 1
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         
         return searchResults.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BizCell", forIndexPath: indexPath) as! BizCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BizCell", for: indexPath) as! BizCell
         
         cell.biz = searchResults[indexPath.row]
         
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
         let hexString = colorsArray[indexPath.row]
         let color = UIColor.colorFromHexString(hexString)
@@ -152,27 +152,27 @@ class WhatWhereController: UIViewController , UISearchBarDelegate , UITextFieldD
         
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
     {
         selectedBizIndex = indexPath.row
         from = 0
-        self.performSegueWithIdentifier("show biz" , sender: indexPath.row)
+        self.performSegue(withIdentifier: "show biz" , sender: indexPath.row)
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         
     }
     
-    @IBAction func back(sender: AnyObject) {
+    @IBAction func back(_ sender: AnyObject) {
         
         //self.navigationController?.popToRootViewControllerAnimated(true)//back to previous
-        self.dismissViewControllerAnimated(true) { 
+        self.dismiss(animated: true) { 
             
             
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         self.view.endEditing(true)
     }

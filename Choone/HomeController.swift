@@ -8,50 +8,69 @@
 
 import UIKit
 
-class HomeController: UIViewController{
+class HomeController: UIViewController, UISearchBarDelegate{
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var _tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let font = UIFont(name: "B Yekan", size: 15) {
+            
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName :font , NSForegroundColorAttributeName: UIColor.white]
+        }
+
+        self.searchBar.layer.cornerRadius = 8.0
+        self.searchBar.layer.masksToBounds = true
+        
+        let searchTextField: UITextField? = searchBar.value(forKey: "searchField") as? UITextField
+        if searchTextField!.responds(to: #selector(getter: UITextField.attributedPlaceholder)) {
+            //var color = UIColor.purpleColor()
+            let attributeDict = [NSForegroundColorAttributeName: UIColor.lightGray.withAlphaComponent(0.5)]
+            searchTextField!.attributedPlaceholder = NSAttributedString(string: "", attributes: attributeDict)
+        }
+        searchTextField?.textAlignment = .right
+        
         print(reachabilityStatus)
         
-        let rule:PublicRule = PublicRule(id: "1",name: "bia", explain: "khoobe", howMuch: "50", from: "100", type: "0")
+        let rule1:PublicRule = PublicRule(id: "1",name: "1 hour", explain: "10 pts, 200 Calories: 15 pts", howMuch: "50", from: "100", type: "0")
+        let rule2:PublicRule = PublicRule(id: "1",name: "10% off for each purchase", explain: "", howMuch: "50", from: "100", type: "0")
+        let rule3:PublicRule = PublicRule(id: "1",name: "5 pts", explain: "", howMuch: "50", from: "100", type: "0")
+        let rule4:PublicRule = PublicRule(id: "1",name: "15% off for each purchase", explain: "", howMuch: "50", from: "100", type: "0")
         
-        nearbyBizes.append(Biz(id: "1", name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule , rule , rule , rule ,rule , rule , rule , rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        nearbyBizes.append(Biz(id: "2",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        nearbyBizes.append(Biz(id: "3",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        nearbyBizes.append(Biz(id: "4",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        nearbyBizes.append(Biz(id: "5",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
-        nearbyBizes.append(Biz(id: "6",name: "اسم" , address: " آدرس آدرس آدرس آدرس آدرس آدرس" , p_rules: [rule] , lat: 0.0 , long: 0.0 , imageURL: ""))
+        nearbyBizes.append(Biz(id: "1", name: "lyon recreation center" , address: " 125 pts" , p_rules: [rule1] , lat: 0.0 , long: 0.0 , imageURL: "1w"))
+        nearbyBizes.append(Biz(id: "2",name: "USC bookstore" , address: " 10 $" , p_rules: [rule2] , lat: 0.0 , long: 0.0 , imageURL: "2w"))
+        nearbyBizes.append(Biz(id: "3",name: "T.A. office hours (CS 560)" , address: " 20 pts" , p_rules: [rule3] , lat: 0.0 , long: 0.0 , imageURL: "3w"))
+        nearbyBizes.append(Biz(id: "4",name: "California Pizza Kitchen" , address: "7 $" , p_rules: [rule4] , lat: 0.0 , long: 0.0 , imageURL: "4w"))
         
-        _tableView.separatorStyle = .None
+        _tableView.separatorStyle = .none
         
-        configureNavigationBar()
-        configureStatusBar()
+        //configureNavigationBar()
+        //configureStatusBar()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSectionsInTableView(_ tableView: UITableView) -> Int
     {
         return 1
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         
         return nearbyBizes.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BizCell", forIndexPath: indexPath) as! BizCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BizCell", for: indexPath) as! BizCell
         
         cell.biz = nearbyBizes[indexPath.row]
         
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         
         let hexString = colorsArray[indexPath.row]
         let color = UIColor.colorFromHexString(hexString)
@@ -60,42 +79,65 @@ class HomeController: UIViewController{
         
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
     {
         selectedBizIndex = indexPath.row
         from = 1
-        self.performSegueWithIdentifier("show biz" , sender: self)
+        self.performSegue(withIdentifier: "show biz" , sender: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.searchBar.endEditing(true)
+        //print("here here")
+    }
+    
+    //Mark : search bar Impls and methods
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
+    {
+        print("searchBarTextDidBeginEditing")
+
+        performSegue(withIdentifier: "WhatWhereSearch", sender: searchBar)
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+        self.view.endEditing(true)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
+        print("touchesBegan")
     }
 }
 
 extension HomeController {
     
-    private func configureNavigationBar() {
+    fileprivate func configureNavigationBar() {
         
         //transparent background
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBar.tintColor = .whiteColor()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = .white
         
         if let font = UIFont(name: "Avenir-medium" , size: 18) {
             self.navigationController?.navigationBar.titleTextAttributes = [
-                NSForegroundColorAttributeName : UIColor.whiteColor(),
+                NSForegroundColorAttributeName : UIColor.white,
                 NSFontAttributeName : font
             ]
         }
         
         self.navigationController?.navigationBar.backItem?.title = ""
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
-    private func configureStatusBar() {
-        guard  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
+    fileprivate func configureStatusBar() {
+        guard  let statusBar = (UIApplication.shared.value(forKey: "statusBarWindow") as AnyObject).value(forKey: "statusBar") as? UIView else {
             return
         }
         
-        statusBar.backgroundColor = .clearColor()
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        statusBar.backgroundColor = .clear
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 }
 

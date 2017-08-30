@@ -14,21 +14,21 @@ class Setting: UIViewController {
         super.viewDidLoad()
 
     }
-    @IBAction func rate(sender: AnyObject) {
+    @IBAction func rate(_ sender: AnyObject) {
         
     }
-    @IBAction func favList(sender: AnyObject) {
+    @IBAction func favList(_ sender: AnyObject) {
         
     }
-    @IBAction func BN(sender: AnyObject) {
+    @IBAction func BN(_ sender: AnyObject) {
         
     }
-    @IBAction func FAQ(sender: AnyObject) {
+    @IBAction func FAQ(_ sender: AnyObject) {
         
     }
-    @IBAction func LogOut(sender: AnyObject) {
+    @IBAction func LogOut(_ sender: AnyObject) {
         
     }
-    @IBAction func editProfile(sender: AnyObject) {
+    @IBAction func editProfile(_ sender: AnyObject) {
     }
 }

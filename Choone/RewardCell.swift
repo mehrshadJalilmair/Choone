@@ -11,8 +11,8 @@ import FoldingCell
 
 protocol rewarding{
     
-    func getReward(cell:RewardCell)
-    func useReward(cell:RewardCell)
+    func getReward(_ cell:RewardCell)
+    func useReward(_ cell:RewardCell)
 }
 
 class RewardCell: FoldingCell {
@@ -48,19 +48,19 @@ class RewardCell: FoldingCell {
         super.awakeFromNib()
     }
     
-    override func animationDuration(itemIndex: NSInteger, type: FoldingCell.AnimationType) -> NSTimeInterval {
+    override func animationDuration(_ itemIndex: NSInteger, type: FoldingCell.AnimationType) -> TimeInterval {
         
         let durations = [0.26, 0.2, 0.2]
         return durations[itemIndex]
     }
     
-    @IBAction func usePoints(sender: AnyObject) {
+    @IBAction func usePoints(_ sender: AnyObject) {
         
         
         delegate.useReward(self)
     }
     
-    @IBAction func getPoints(sender: AnyObject) {
+    @IBAction func getPoints(_ sender: AnyObject) {
         
         delegate.getReward(self)
     }

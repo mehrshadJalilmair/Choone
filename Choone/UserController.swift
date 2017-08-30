@@ -21,29 +21,29 @@ class UserController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userImage.layer.borderColor = UIColor.whiteColor().CGColor
+        /*userImage.layer.borderColor = UIColor.white.cgColor
         userImage.layer.cornerRadius = userImage.bounds.width / 2.0
         userImage.layer.masksToBounds = true
         userImage.layer.borderWidth = 1.5
-        userImage.image = UIImage(named: "2")
+        userImage.image = UIImage(named: "2")*/
         
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             
             self.recentContainer.alpha = 0
             self.settingContainer.alpha = 1
         })
     }
     
-    @IBAction func tabSelecting(sender: AnyObject) {
+    @IBAction func tabSelecting(_ sender: AnyObject) {
         
         if sender.selectedSegmentIndex == 0 {
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 
                 self.recentContainer.alpha = 0
                 self.settingContainer.alpha = 1
             })
         } else {
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 
                 self.recentContainer.alpha = 1
                 self.settingContainer.alpha = 0
@@ -51,9 +51,9 @@ class UserController: UIViewController {
         }
     }
 
-    @IBAction func back(sender: AnyObject) {
+    @IBAction func back(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true) { 
+        self.dismiss(animated: true) { 
             
         }
     }

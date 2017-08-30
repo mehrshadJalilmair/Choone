@@ -11,12 +11,13 @@ import UIKit
 class BizProfileController: UIViewController , UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate{
     
     
+    
     let offset_HeaderStop:CGFloat = 60.0 // At this offset the Header stops its transformations
     let distance_W_LabelHeader:CGFloat = 20.0 // The distance between the top of the screen and the top of the White Label
     
     
     enum contentTypes {
-        case Tweets, Media
+        case tweets, media
     }
     // MARK: Outlet properties
     
@@ -28,7 +29,7 @@ class BizProfileController: UIViewController , UITableViewDelegate, UITableViewD
     // MARK: class properties
     var headerBlurImageView:UIImageView!
     var headerImageView:UIImageView!
-    var contentToDisplay : contentTypes = .Tweets
+    var contentToDisplay : contentTypes = .tweets
     
     // MARK: The view
     
@@ -41,20 +42,20 @@ class BizProfileController: UIViewController , UITableViewDelegate, UITableViewD
         
         headerImageView = UIImageView(frame: headerView.bounds)
         headerImageView?.image = UIImage(named: "2")
-        headerImageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerView.insertSubview(headerImageView, belowSubview: headerLabel)
         
         // Header - Blurred Image
         headerBlurImageView = UIImageView(frame: headerView.bounds)
-        headerBlurImageView?.image = UIImage(named: "2")?.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor.clearColor())
-        headerBlurImageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        headerBlurImageView?.image = UIImage(named: "2")?.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
+        headerBlurImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerBlurImageView?.alpha = 0.0
         headerView.insertSubview(headerBlurImageView, belowSubview: headerLabel)
         
         headerView.clipsToBounds = true
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     
@@ -65,31 +66,31 @@ class BizProfileController: UIViewController , UITableViewDelegate, UITableViewD
     
     // MARK: Table view processing
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch contentToDisplay {
-        case .Tweets:
+        case .tweets:
             return 40
             
-        case .Media:
+        case .media:
             return 20
         }
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
         
         switch contentToDisplay {
-        case .Tweets:
+        case .tweets:
             cell.textLabel?.text = "Tweet Tweet!"
             
-        case .Media:
+        case .media:
             cell.textLabel?.text = "Piccies!"
             cell.imageView?.image = UIImage(named: "header_bg")
         }
@@ -101,7 +102,7 @@ class BizProfileController: UIViewController , UITableViewDelegate, UITableViewD
     
     // MARK: Scroll view delegate
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y// + headerView.bounds.height
         
@@ -119,7 +120,7 @@ class BizProfileController: UIViewController , UITableViewDelegate, UITableViewD
             
             // Hide views if scrolled super fast
             headerView.layer.zPosition = 0
-            headerLabel.hidden = true
+            headerLabel.isHidden = true
             
         }
             
@@ -156,14 +157,14 @@ class BizProfileController: UIViewController , UITableViewDelegate, UITableViewD
     
     // MARK: Interface buttons
     
-    @IBAction func selectContentType(sender: UISegmentedControl) {
+    @IBAction func selectContentType(_ sender: UISegmentedControl) {
         
         // crap code I know
         if sender.selectedSegmentIndex == 0 {
-            contentToDisplay = .Tweets
+            contentToDisplay = .tweets
         }
         else {
-            contentToDisplay = .Media
+            contentToDisplay = .media
         }
         
         tableView.reloadData()
